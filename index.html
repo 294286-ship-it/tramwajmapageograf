@@ -54,7 +54,7 @@ sv.addEventListener("click",e=>{if(moved>6)return;const s=e.target.closest("[dat
  else if(l)tog(l);else pop.style.display="none"});
 pop.addEventListener("click",e=>{const b=e.target.dataset.b;if(b)tog(b)});
 $("reset").onclick=()=>{sel.clear();paint();fit()};$("zi").onclick=()=>{const r=sv.getBoundingClientRect();zoomAt(r.width/2,r.height/2,1.5)};$("zo").onclick=()=>{const r=sv.getBoundingClientRect();zoomAt(r.width/2,r.height/2,1/1.5)};
-const WORKER="https://TWOJ-WORKER.workers.dev/";const PR=D.P;
+const WORKER="https://tramwajemapageograf.294286.workers.dev/";const PR=D.P;
 function proj(lon,lat){const a=6378137,f=1/298.257222101,k0=.999923,l0=18*Math.PI/180,n=f/(2-f),A=a/(1+n)*(1+n*n/4+n**4/64),al=[n/2-2*n*n/3+5*n**3/16,13*n*n/48-3*n**3/5,61*n**3/240],e=Math.sqrt(f*(2-f));
  const p=lat*Math.PI/180,l=lon*Math.PI/180-l0,t=Math.sinh(Math.atanh(Math.sin(p))-e*Math.atanh(e*Math.sin(p))),x0=Math.atan2(t,Math.cos(l)),e0=Math.atanh(Math.sin(l)/Math.sqrt(1+t*t));let xi=x0,et=e0;
  for(let j=0;j<3;j++){const m=2*(j+1);xi+=al[j]*Math.sin(m*x0)*Math.cosh(m*e0);et+=al[j]*Math.cos(m*x0)*Math.sinh(m*e0)}
